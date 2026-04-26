@@ -49,4 +49,4 @@ LISTEN.moe-html/
 
 ---
 
-<p align="center">Made with ❤️ for vall wibu</p>
+<p align="center">Made with ❤️ BY vall wibu suka neko</p>
