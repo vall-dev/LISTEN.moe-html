@@ -11,28 +11,24 @@
 
 - 🎶 **Live Stream** — JPOP & KPOP stations from listen.moe
 - 📡 **Real-time Metadata** — Song title, artist, album art via WebSocket API
-- 🎨 **Glassmorphism UI** — Dark premium theme inspired by listen.moe
 - 🌊 **Audio Visualizer** — Real-time frequency bars (Web Audio API)
-- ❤️ **Favorites** — Save songs, stored in localStorage
+- ❤️ **Favorites** — Save songs, stored in localStorage (coming soon)
 - 🕘 **History** — Recently played tracks
-- 📱 **Responsive** — Works on mobile & desktop
-- 🌟 **Animated Background** — Album art blur background
 
 ## 🚀 Deploy to GitHub Pages
 
 1. Fork or upload this repo to GitHub
 2. Go to **Settings → Pages**
 3. Source: **Deploy from a branch → main → / (root)**
-4. Save — your site will be live at `https://yourusername.github.io/ANIME_RADIO/`
+4. Save — your site will be live at `https://yourusername.github.io/LISTEN.moe-html/`
 
 ## 📁 Files
 
 ```
-ANIME_RADIO/
+LISTEN.moe-html/
 ├── index.html   ← Main HTML structure
-├── style.css    ← Dark glassmorphism styles
+├── style.css    ← costum your theme web
 ├── app.js       ← Stream + WebSocket + Visualizer logic
-├── mascot.png   ← Anime mascot character
 └── README.md    ← This file
 ```
 
@@ -53,4 +49,4 @@ ANIME_RADIO/
 
 ---
 
-<p align="center">Made with ❤️ for anime music lovers</p>
+<p align="center">Made with ❤️ for vall wibu</p>
