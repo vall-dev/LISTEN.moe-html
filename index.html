@@ -1,156 +1,1198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YUME RADIO — Anime Music Stream</title>
-  <meta name="description" content="YUME RADIO — Free 24/7 anime music streaming. JPOP & KPOP powered by listen.moe." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>VALL RADIO MUSIC — Free 24/7 Anime Music Stream | JPOP & KPOP Online Radio</title>
+  <meta name="description" content="VALL RADIO — Listen to free 24/7 anime music streaming online. Stream JPOP, KPOP, anime OST, and Japanese music live powered by listen.moe. No ads, no signup." />
+  <meta name="keywords" content="anime radio, jpop radio, kpop radio, anime music stream, japanese music online, listen moe, free anime radio, anime ost, jpop streaming, kpop streaming, online radio anime, vall radio, yume radio, anime music player, 24/7 anime music" />
+  <meta name="author" content="VALL RADIO" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://radio.vall.pw/" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="VALL RADIO" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VALL RADIO" />
+  <meta property="og:title" content="VALL RADIO — Free 24/7 Anime Music Stream" />
+  <meta property="og:description" content="Stream free anime music 24/7. JPOP, KPOP, anime OST live radio powered by listen.moe. No ads, no signup required." />
+  <meta property="og:url" content="https://radio.vall.pw/" />
+  <meta property="og:image" content="https://radio.vall.pw/img/icon.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="VALL RADIO — Anime Music Streaming" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VALL RADIO — Free 24/7 Anime Music Stream" />
+  <meta name="twitter:description" content="Stream JPOP, KPOP & anime OST live 24/7. Free, no ads, no signup." />
+  <meta name="twitter:image" content="https://radio.vall.pw/img/icon.png" />
+  <meta name="twitter:image:alt" content="VALL RADIO — Anime Music Streaming" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "VALL RADIO",
+    "url": "https://radio.vall.pw/",
+    "description": "Free 24/7 anime music streaming. JPOP & KPOP online radio powered by listen.moe.",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "genre": ["Anime", "JPOP", "KPOP", "Japanese Music"],
+    "potentialAction": {
+      "@type": "ListenAction",
+      "target": "https://radio.vall.pw/"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://cdn.listen.moe" />
+  <link rel="dns-prefetch" href="https://listen.moe" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg:        #080808;
+  --bg-2:      #0f0f0f;
+  --bg-3:      #161616;
+  --bg-4:      #1e1e1e;
+  --bg-5:      #2a2a2a;
+  --border:    rgba(255,255,255,0.06);
+  --border-h:  rgba(255,255,255,0.12);
+  --text-1:    #f5f5f5;
+  --text-2:    #a3a3a3;
+  --text-3:    #555;
+  --accent:    #1db954;
+  --accent-h:  #1ed760;
+  --accent-s:  rgba(29,185,84,0.1);
+  --accent-g:  rgba(29,185,84,0.04);
+  --red:       #ff4d4d;
+  --sidebar-w: 248px;
+  --player-h:  88px;
+  --mono:      'JetBrains Mono', monospace;
+  --ease:      cubic-bezier(.4,0,.2,1);
+  --r:         8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-1);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  height: 100dvh;
+  height: 100vh;
+}
+a { text-decoration: none; color: inherit; }
+button { border: none; cursor: pointer; font-family: inherit; background: none; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-5); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  height: calc(100vh - var(--player-h));
+  overflow: hidden;
+}
+
+.sidebar {
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 22px 18px 14px;
+}
+.logo-icon {
+  width: 34px; height: 34px;
+  background: var(--accent);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: #000; flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(29,185,84,.35);
+}
+.logo-name {
+  font-weight: 800; font-size: 1rem;
+  letter-spacing: -.5px; color: var(--text-1);
+}
+.logo-name span { color: var(--accent); }
+
+.sidebar-nav {
+  padding: 0 10px 6px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.snav-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 12px; border-radius: var(--r);
+  font-size: .875rem; font-weight: 500;
+  color: var(--text-3); cursor: pointer;
+  transition: color .18s, background .18s;
+}
+.snav-item i { font-size: 1.05rem; }
+.snav-item:hover { color: var(--text-2); background: var(--bg-3); }
+.snav-item.active { color: var(--text-1); background: var(--bg-4); }
+
+.sidebar-section { flex: 1; padding: 6px 10px; overflow-y: auto; }
+.sidebar-section-title {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 8px 10px;
+  font-size: .65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.2px; color: var(--text-3);
+}
+.station-list { display: flex; flex-direction: column; gap: 2px; }
+
+.station-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: var(--r);
+  background: none; color: var(--text-2);
+  transition: background .18s, color .18s;
+  text-align: left; width: 100%;
+}
+.station-item:hover { background: var(--bg-3); color: var(--text-1); }
+.station-item.active { color: var(--text-1); background: var(--bg-4); }
+
+.station-item-thumb {
+  width: 42px; height: 42px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.jpop-thumb { background: linear-gradient(135deg,#c026d3,#7c3aed); color: #fff; box-shadow: 0 4px 12px rgba(124,58,237,.3); }
+.kpop-thumb { background: linear-gradient(135deg,#ea580c,#dc2626); color: #fff; box-shadow: 0 4px 12px rgba(220,38,38,.3); }
+
+.station-item-info { flex: 1; min-width: 0; }
+.station-item-name { display: block; font-size: .875rem; font-weight: 600; }
+.station-item-sub  { display: block; font-size: .7rem; color: var(--text-3); margin-top: 1px; }
+
+.station-playing-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+  animation: pulse-g 2s ease infinite;
+}
+@keyframes pulse-g {
+  0%,100% { box-shadow: 0 0 0 0 rgba(29,185,84,0); }
+  50%      { box-shadow: 0 0 0 4px rgba(29,185,84,.15); }
+}
+
+.listenmoe-credit-block {
+  display: block;
+  margin: 0 10px 8px;
+  padding: 10px 12px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.listenmoe-credit-block:hover {
+  border-color: rgba(29,185,84,.35);
+  background: rgba(29,185,84,.05);
+}
+.lm-credit-inner { display: flex; align-items: center; gap: 10px; }
+.lm-favicon {
+  width: 26px; height: 26px; border-radius: 5px;
+  flex-shrink: 0; background: var(--bg-4);
+}
+.lm-credit-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.lm-name { font-size: .78rem; font-weight: 800; font-family: var(--mono); color: var(--text-1); letter-spacing: .3px; }
+.lm-dot  { color: var(--accent); }
+.lm-sub  { font-size: .63rem; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lm-arrow { font-size: .68rem; color: var(--text-3); flex-shrink: 0; transition: color .2s; }
+.listenmoe-credit-block:hover .lm-arrow { color: var(--accent); }
+
+.sidebar-footer {
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.sfooter-link {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--bg-4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; color: var(--text-3);
+  transition: background .2s, color .2s;
+}
+.sfooter-link:hover { background: var(--bg-5); color: var(--text-1); }
+.sfooter-listeners {
+  margin-left: auto; display: flex; align-items: center; gap: 5px;
+  font-size: .72rem; color: var(--text-3); font-family: var(--mono);
+}
+
+.main-content {
+  background: var(--bg-2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-topbar { display: none; }
+
+.view { display: none; flex-direction: column; flex: 1; }
+.view.active { display: flex; }
+
+.hero-section {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(135deg, #1a1a3e 0%, #0f1a2e 50%, #1a0f1a 100%);
+  background-size: cover; background-position: center top;
+  filter: blur(32px) saturate(130%) brightness(.38);
+  transform: scale(1.08);
+  transition: background-image .9s var(--ease);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, var(--bg-2) 0%, rgba(15,15,15,.6) 50%, transparent 100%),
+    linear-gradient(to right, rgba(0,0,0,.3) 0%, transparent 60%);
+}
+
+.hero-content {
+  position: relative; z-index: 1;
+  display: flex; align-items: flex-end; gap: 28px;
+  padding: 40px 32px 32px;
+  width: 100%;
+}
+
+.hero-art {
+  width: 192px; height: 192px; flex-shrink: 0;
+  border-radius: 10px; overflow: hidden;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.8),
+    0 24px 64px rgba(0,0,0,.6);
+  position: relative;
+  background: var(--bg-4);
+  display: flex; align-items: center; justify-content: center;
+  transition: box-shadow .4s ease, transform .3s ease;
+}
+.hero-art:hover { transform: scale(1.02); }
+.hero-art img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: none;
+}
+.art-fallback {
+  font-size: 60px; color: var(--text-3);
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+}
+.hero-art.playing {
+  box-shadow:
+    0 0 0 2px var(--accent),
+    0 8px 24px rgba(0,0,0,.8),
+    0 0 48px rgba(29,185,84,.25);
+}
+
+.hero-info { flex: 1; min-width: 0; padding-bottom: 6px; }
+
+.hero-badge-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.live-badge {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: .65rem; font-weight: 700;
+  letter-spacing: 1.8px; color: var(--red); text-transform: uppercase;
+}
+.station-badge {
+  font-family: var(--mono); font-size: .65rem; font-weight: 700;
+  padding: 3px 10px;
+  background: var(--accent-s);
+  border: 1px solid rgba(29,185,84,.25);
+  border-radius: 100px; color: var(--accent); letter-spacing: .8px;
+}
+
+.hero-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 800; letter-spacing: -1.5px;
+  color: var(--text-1); line-height: 1.08;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 20px rgba(0,0,0,.6);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hero-artist {
+  font-size: 1rem; color: var(--text-2);
+  font-weight: 500; margin-bottom: 4px;
+}
+.hero-anime {
+  font-family: var(--mono); font-size: .73rem;
+  color: var(--text-3); margin-bottom: 22px;
+}
+.hero-actions { display: flex; align-items: center; gap: 10px; }
+.hero-fav-btn, .hero-share-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; color: var(--text-2);
+  transition: all .2s;
+}
+.hero-fav-btn:hover, .hero-share-btn:hover {
+  background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.2);
+  color: var(--text-1); transform: scale(1.08);
+}
+.hero-fav-btn.active { color: var(--accent); border-color: rgba(29,185,84,.4); background: var(--accent-s); }
+
+.stats-section {
+  display: flex; gap: 12px;
+  padding: 20px 32px 24px;
+}
+.stat-card {
+  flex: 1; display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color .2s, transform .2s;
+}
+.stat-card:hover { border-color: var(--border-h); transform: translateY(-1px); }
+.stat-icon {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--accent-s);
+  border: 1px solid rgba(29,185,84,.15);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.stat-val { display: block; font-weight: 800; font-size: 1.1rem; color: var(--text-1); line-height: 1; }
+.stat-key {
+  display: block; font-size: .67rem; color: var(--text-3);
+  margin-top: 4px; text-transform: uppercase; letter-spacing: .8px;
+}
+
+.view-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 32px 16px;
+}
+.view-title {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.25rem; font-weight: 800; letter-spacing: -.5px;
+}
+.view-title i { color: var(--accent); }
+.clear-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 100px;
+  background: none; border: 1px solid var(--border);
+  font-size: .78rem; color: var(--text-3);
+  transition: all .2s;
+}
+.clear-btn:hover { border-color: var(--border-h); color: var(--text-1); }
+
+.history-grid { padding: 0 32px 100px; display: flex; flex-direction: column; gap: 2px; }
+.history-empty {
+  color: var(--text-3); text-align: center; margin-top: 60px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  font-size: .875rem;
+}
+.history-empty i { font-size: 2.5rem; opacity: .4; }
+
+.history-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 8px 12px; border-radius: var(--r);
+  transition: background .15s;
+}
+.history-item:hover { background: var(--bg-3); }
+.h-num { width: 24px; text-align: right; font-size: .75rem; color: var(--text-3); font-family: var(--mono); flex-shrink: 0; }
+.h-thumb {
+  width: 44px; height: 44px; border-radius: 5px;
+  background: var(--bg-4); flex-shrink: 0; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; color: var(--text-3);
+}
+.h-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.h-info { flex: 1; min-width: 0; }
+.h-title  { font-size: .875rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.h-artist { font-size: .76rem; color: var(--text-3); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.h-time   { font-family: var(--mono); font-size: .7rem; color: var(--text-3); flex-shrink: 0; }
+
+.player-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--player-h);
+  background: rgba(14,14,14,.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  z-index: 100;
+}
+
+.pb-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.pb-art {
+  width: 54px; height: 54px; border-radius: 6px;
+  background: var(--bg-4); flex-shrink: 0; overflow: hidden;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
+.pb-art img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.pb-art-fallback { font-size: 1.1rem; color: var(--text-3); }
+.pb-badge {
+  position: absolute; bottom: 4px; right: 4px;
+  background: rgba(0,0,0,.8);
+  padding: 3px 5px; border-radius: 100px;
+  display: flex; gap: 2px; align-items: flex-end; height: 14px;
+}
+.bar { width: 2px; background: var(--accent); border-radius: 2px; animation: eq-bar .9s infinite ease-in-out; }
+.b1 { animation-delay: 0s; }
+.b2 { animation-delay: .2s; }
+.b3 { animation-delay: .4s; }
+@keyframes eq-bar {
+  0%,100% { height: 3px; }
+  50% { height: 9px; }
+}
+.pb-track { min-width: 0; flex: 1; }
+.pb-title  { font-size: .875rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pb-artist { font-size: .73rem; color: var(--text-3); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pb-fav-btn {
+  color: var(--text-3); font-size: 1rem;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: color .2s, transform .2s;
+}
+.pb-fav-btn:hover { color: var(--text-1); transform: scale(1.1); }
+.pb-fav-btn.active { color: var(--accent); }
+
+.pb-center { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.pb-controls { display: flex; align-items: center; gap: 16px; }
+
+.pb-ctrl-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--bg-4); color: var(--text-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .72rem; font-weight: 800;
+  font-family: var(--mono); transition: all .2s;
+  border: 1px solid var(--border);
+}
+.pb-ctrl-btn:hover { background: var(--bg-5); color: var(--text-1); border-color: var(--border-h); transform: scale(1.05); }
+
+.pb-play-btn {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--text-1); color: #000;
+  font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .2s, background .2s, box-shadow .2s;
+  box-shadow: 0 4px 16px rgba(255,255,255,.15);
+}
+.pb-play-btn:hover {
+  transform: scale(1.08);
+  background: var(--accent); color: #000;
+  box-shadow: 0 4px 20px rgba(29,185,84,.4);
+}
+.pb-station-label { font-size: .68rem; font-weight: 800; font-family: var(--mono); }
+
+.pb-progress { display: flex; align-items: center; gap: 8px; width: 100%; }
+.pb-time { font-family: var(--mono); font-size: .65rem; color: var(--text-3); flex-shrink: 0; min-width: 32px; }
+.pb-time:last-child { text-align: right; }
+.pb-track-bar {
+  flex: 1; height: 3px; border-radius: 4px;
+  background: var(--bg-5); cursor: pointer; overflow: hidden;
+  transition: height .15s;
+}
+.pb-track-bar:hover { height: 5px; }
+.pb-fill {
+  height: 100%; background: var(--text-3); border-radius: 4px;
+  transition: width .8s linear;
+}
+.pb-track-bar:hover .pb-fill { background: var(--accent); }
+
+.live-dot-sm {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--red); display: inline-block; flex-shrink: 0;
+}
+.live-dot-sm.pulse { animation: pulse-r 1.4s ease infinite; }
+@keyframes pulse-r {
+  0%,100% { opacity: 1; }
+  50% { opacity: .35; }
+}
+
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 9; }
+
+.toast {
+  position: fixed;
+  bottom: calc(var(--player-h) + 16px); left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--bg-4);
+  border: 1px solid var(--border);
+  color: var(--text-1); padding: 9px 18px; border-radius: 100px;
+  font-size: .8rem; display: flex; align-items: center; gap: 8px;
+  opacity: 0; visibility: hidden; z-index: 999;
+  transition: opacity .25s, visibility .25s, transform .25s;
+  white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+.toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+@media (max-width: 768px) {
+  :root { --sidebar-w: 0px; --player-h: 76px; }
+  .app-shell { grid-template-columns: 1fr; }
+
+  .sidebar {
+    position: fixed; top: 0; left: -260px; width: 260px; height: 100vh;
+    z-index: 100; transition: left .3s var(--ease);
+  }
+  .sidebar.open { left: 0; }
+  .sidebar-overlay.show { display: block; }
+
+  .mobile-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(14,14,14,.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .mob-logo { font-weight: 800; font-size: .95rem; }
+  .mob-logo span { color: var(--accent); }
+  .mob-menu-btn { background: none; border: none; color: var(--text-1); font-size: 1.25rem; display: flex; }
+  .mob-listeners { display: flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: .7rem; color: var(--text-3); }
+
+  .hero-section { min-height: 260px; }
+  .hero-content { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 16px; }
+  .hero-art { width: 110px; height: 110px; }
+  .hero-title { font-size: 1.5rem; }
+  .stats-section { flex-direction: column; padding: 16px; }
+  .history-grid, .view-header { padding-left: 16px; padding-right: 16px; }
+
+  .player-bar { padding: 0 16px; grid-template-columns: 1fr 1.6fr; }
+}
+
+@media (max-width: 480px) {
+  .hero-art { width: 90px; height: 90px; }
+  .hero-title { font-size: 1.2rem; }
+  .pb-play-btn { width: 36px; height: 36px; font-size: 1rem; }
+}
+
+</style>
 <body>
 
-  <div class="bg-dots"></div>
+  <div class="app-shell">
 
-  <header class="topbar">
-    <div class="topbar-brand">
-      <div class="brand-icon"><i class="ph-fill ph-waveform"></i></div>
-      <div class="brand-text">YUME<span>RADIO</span></div>
-    </div>
+    <aside class="sidebar" id="sidebar">
 
-    <div class="station-tabs">
-      <button class="tab active" id="tabJpop" onclick="switchStation('jpop')">
-        <i class="ph ph-music-note"></i> JPOP
-      </button>
-      <button class="tab" id="tabKpop" onclick="switchStation('kpop')">
-        <i class="ph ph-music-note"></i> KPOP
-      </button>
-    </div>
-
-    <div class="topbar-right">
-      <div class="listener-chip">
-        <span class="live-dot"></span>
-        <i class="ph ph-headphones"></i>
-        <span id="listenerCount">—</span>
+      <div class="sidebar-logo">
+        <div class="logo-icon"><i class="bi bi-music-note-beamed"></i></div>
+        <span class="logo-name">VALL<span>RADIO</span></span>
       </div>
-      <a class="nav-icon-btn" href="https://discord.gg/listenmoe" target="_blank" rel="noopener" title="Discord">
-        <i class="ph ph-discord-logo"></i>
-      </a>
-      <button class="nav-icon-btn" id="btnHistory" onclick="toggleHistoryPanel()" title="History">
-        <i class="ph ph-clock-counter-clockwise"></i>
-      </button>
-    </div>
-  </header>
 
-  <main class="player-layout">
+      <nav class="sidebar-nav">
+        <a class="snav-item active" id="navHome" onclick="showView('home')">
+          <i class="bi bi-house-fill"></i>
+          <span>Home</span>
+        </a>
+        <a class="snav-item" id="navHistory" onclick="showView('history')">
+          <i class="bi bi-clock-history"></i>
+          <span>History</span>
+        </a>
+      </nav>
 
-    <div class="art-col">
-      <div class="art-frame" id="artFrame">
-        <img id="artImg" src="" alt="Album Art" />
-        <div class="art-fallback" id="artFallback">
-          <i class="ph-thin ph-vinyl-record"></i>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">
+          <span>Stations</span>
+          <i class="bi bi-broadcast"></i>
         </div>
-        <div class="art-ring" id="artRing"></div>
-        <div class="art-playing-badge" id="artPlayingBadge" style="display:none">
+        <div class="station-list">
+          <button class="station-item active" id="sideJpop" onclick="switchStation('jpop')">
+            <div class="station-item-thumb jpop-thumb">
+              <i class="bi bi-music-note-beamed"></i>
+            </div>
+            <div class="station-item-info">
+              <span class="station-item-name">JPOP</span>
+              <span class="station-item-sub">listen.moe · Anime</span>
+            </div>
+            <div class="station-playing-dot" id="dotJpop"></div>
+          </button>
+          <button class="station-item" id="sideKpop" onclick="switchStation('kpop')">
+            <div class="station-item-thumb kpop-thumb">
+              <i class="bi bi-music-note-beamed"></i>
+            </div>
+            <div class="station-item-info">
+              <span class="station-item-name">KPOP</span>
+              <span class="station-item-sub">listen.moe · Korean</span>
+            </div>
+            <div class="station-playing-dot" id="dotKpop" style="display:none"></div>
+          </button>
+        </div>
+      </div>
+
+      <a class="listenmoe-credit-block" href="https://listen.moe" target="_blank" rel="noopener">
+        <div class="lm-credit-inner">
+          <img class="lm-favicon" src="https://listen.moe/favicon.ico" alt="listen.moe" onerror="this.style.display='none'" />
+          <div class="lm-credit-text">
+            <span class="lm-name">LISTEN<span class="lm-dot">.moe</span></span>
+            <span class="lm-sub">Powered by listen.moe API</span>
+          </div>
+          <i class="bi bi-box-arrow-up-right lm-arrow"></i>
+        </div>
+      </a>
+
+      <div class="sidebar-footer">
+        <a class="sfooter-link" href="https://discord.gg/listenmoe" target="_blank" rel="noopener" title="Discord">
+          <i class="bi bi-discord"></i>
+        </a>
+        <a class="sfooter-link" href="https://listen.moe" target="_blank" rel="noopener" title="listen.moe">
+          <i class="bi bi-globe2"></i>
+        </a>
+        <div class="sfooter-listeners">
+          <span class="live-dot-sm"></span>
+          <i class="bi bi-headphones"></i>
+          <span id="listenerCount">—</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="main-content" id="mainContent">
+
+      <div class="mobile-topbar">
+        <button class="mob-menu-btn" onclick="toggleSidebar()">
+          <i class="bi bi-layout-sidebar"></i>
+        </button>
+        <span class="mob-logo">VALL<span>RADIO</span></span>
+        <div class="mob-listeners">
+          <span class="live-dot-sm"></span>
+          <span id="listenerCountMob">—</span>
+        </div>
+      </div>
+
+      <div class="view active" id="viewHome">
+
+        <section class="hero-section" id="heroSection">
+          <div class="hero-bg" id="heroBg"></div>
+          <div class="hero-content">
+            <div class="hero-art" id="heroArt">
+              <img id="artImg" src="" alt="Album Art" />
+              <div class="art-fallback" id="artFallback">
+                <i class="bi bi-vinyl"></i>
+              </div>
+            </div>
+            <div class="hero-info">
+              <div class="hero-badge-row">
+                <div class="live-badge">
+                  <span class="live-dot-sm pulse"></span>
+                  LIVE STREAM
+                </div>
+                <span class="station-badge" id="stationChip">JPOP</span>
+              </div>
+              <h1 class="hero-title" id="songTitle">Loading...</h1>
+              <p class="hero-artist" id="songArtist">—</p>
+              <p class="hero-anime" id="songAnime"></p>
+              <div class="hero-actions">
+                <button class="hero-fav-btn" id="favoriteBtn" onclick="toggleFavorite()" title="Favorite">
+                  <i class="bi bi-heart" id="favoriteIcon"></i>
+                </button>
+                <a class="hero-share-btn" href="https://listen.moe" target="_blank" rel="noopener" title="Open listen.moe">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-section">
+          <div class="stat-card">
+            <span class="stat-icon"><i class="bi bi-headphones"></i></span>
+            <div>
+              <span class="stat-val" id="statListeners">—</span>
+              <span class="stat-key">Listeners</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon"><i class="bi bi-broadcast"></i></span>
+            <div>
+              <span class="stat-val" id="statStation">JPOP</span>
+              <span class="stat-key">Station</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon"><i class="bi bi-clock"></i></span>
+            <div>
+              <span class="stat-val" id="statDuration">—</span>
+              <span class="stat-key">Duration</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="view" id="viewHistory">
+        <div class="view-header">
+          <h2 class="view-title">
+            <i class="bi bi-clock-history"></i>
+            Recent Tracks
+          </h2>
+          <button class="clear-btn" onclick="clearHistory()">
+            <i class="bi bi-trash3"></i> Clear
+          </button>
+        </div>
+        <div class="history-grid" id="historyList">
+          <div class="history-empty">
+            <i class="bi bi-music-note-list"></i>
+            <span>No tracks yet. Start listening!</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  </div>
+
+  <footer class="player-bar" id="playerBar">
+
+    <div class="pb-left">
+      <div class="pb-art" id="pbArt">
+        <img id="pbArtImg" src="" alt="" />
+        <div class="pb-art-fallback" id="pbArtFallback"><i class="bi bi-music-note"></i></div>
+        <div class="pb-badge" id="pbBadge" style="display:none">
           <span class="bar b1"></span>
           <span class="bar b2"></span>
           <span class="bar b3"></span>
-          <span class="bar b4"></span>
         </div>
       </div>
-
-      <div class="art-meta">
-        <span class="station-chip" id="stationChip">JPOP</span>
-        <span class="art-source">via listen.moe</span>
+      <div class="pb-track">
+        <div class="pb-title" id="pbTitle">Click play to start</div>
+        <div class="pb-artist" id="pbArtist">VALL RADIO</div>
       </div>
-
-      <div class="art-side-info">
-        <p class="side-title" id="sideTitle">—</p>
-        <p class="side-artist" id="sideArtist">—</p>
-      </div>
-    </div>
-
-    <div class="player-col">
-
-      <div class="song-block">
-        <div class="live-tag">
-          <span class="live-dot pulse"></span>
-          LIVE STREAM
-        </div>
-        <h1 class="song-title" id="songTitle">Loading...</h1>
-        <p class="song-artist" id="songArtist">—</p>
-        <p class="song-anime" id="songAnime"></p>
-      </div>
-
-      <div class="eq-block">
-        <div class="eq-header">
-          <i class="ph ph-equalizer"></i>
-          <span>EQUALIZER</span>
-        </div>
-        <div class="eq-bars" id="eqBars">
-
-        </div>
-      </div>
-
-      <div class="progress-block">
-        <div class="progress-track">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <div class="progress-times">
-          <span id="timeElapsed">0:00</span>
-          <span id="timeDuration">—</span>
-        </div>
-      </div>
-
-      <div class="controls-row">
-        <button class="ctrl-btn" id="favoriteBtn" onclick="toggleFavorite()" title="Favorite">
-          <i class="ph ph-heart" id="favoriteIcon"></i>
-        </button>
-
-        <button class="play-btn" id="playBtn" onclick="togglePlay()">
-          <i class="ph-fill ph-play" id="playIcon"></i>
-        </button>
-
-        <div class="vol-group">
-          <button class="ctrl-btn" id="muteBtn" onclick="toggleMute()">
-            <i class="ph ph-speaker-high" id="volumeIcon"></i>
-          </button>
-          <input type="range" class="vol-slider" id="volumeSlider"
-                 min="0" max="100" value="80" oninput="setVolume(this.value)" />
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <aside class="history-panel" id="historyPanel">
-    <div class="history-panel-header">
-      <div class="history-panel-title">
-        <i class="ph ph-clock-counter-clockwise"></i>
-        Recent Tracks
-      </div>
-      <button class="ctrl-btn" onclick="toggleHistoryPanel()">
-        <i class="ph ph-x"></i>
+      <button class="pb-fav-btn" id="pbFavBtn" onclick="toggleFavorite()" title="Favorite">
+        <i class="bi bi-heart" id="pbFavIcon"></i>
       </button>
     </div>
-    <div class="history-list" id="historyList">
-      <div class="history-empty">
-        <i class="ph-thin ph-music-note-simple"></i>
-        <span>No tracks yet. Start listening!</span>
+
+    <div class="pb-center">
+      <div class="pb-controls">
+        <button class="pb-ctrl-btn" onclick="switchStation('jpop')" title="JPOP">
+          <span class="pb-station-label">J</span>
+        </button>
+        <button class="pb-play-btn" id="playBtn" onclick="togglePlay()">
+          <i class="bi bi-play-fill" id="playIcon"></i>
+        </button>
+        <button class="pb-ctrl-btn" onclick="switchStation('kpop')" title="KPOP">
+          <span class="pb-station-label">K</span>
+        </button>
+      </div>
+      <div class="pb-progress">
+        <span class="pb-time" id="timeElapsed">0:00</span>
+        <div class="pb-track-bar">
+          <div class="pb-fill" id="progressFill"></div>
+        </div>
+        <span class="pb-time" id="timeDuration">—</span>
       </div>
     </div>
-  </aside>
-  <div class="history-overlay" id="historyOverlay" onclick="toggleHistoryPanel()"></div>
+
+  </footer>
 
   <div class="toast" id="toast">
-    <i class="ph ph-check-circle" id="toastIcon"></i>
+    <i class="bi bi-check-circle" id="toastIcon"></i>
     <span id="toastMsg">—</span>
   </div>
 
   <audio id="audioEl" preload="none"></audio>
-  <script src="app.js"></script>
+  <script>
+const STATIONS = {
+  jpop: { stream: 'https://listen.moe/stream',      ws: 'wss://listen.moe/gateway_v2',      name: 'JPOP' },
+  kpop: { stream: 'https://listen.moe/kpop/stream', ws: 'wss://listen.moe/kpop/gateway_v2', name: 'KPOP' },
+};
+
+let station     = 'jpop';
+let isPlaying   = false;
+let ws          = null;
+let wsHB        = null;
+let currentSong = null;
+let songStart   = 0;
+let progressInt = null;
+let toastTmr    = null;
+let historyArr  = [];
+let favorites   = JSON.parse(localStorage.getItem('yr_favs') || '[]');
+
+const audio         = document.getElementById('audioEl');
+const playBtn       = document.getElementById('playBtn');
+const playIcon      = document.getElementById('playIcon');
+
+const songTitle     = document.getElementById('songTitle');
+const songArtist    = document.getElementById('songArtist');
+const songAnime     = document.getElementById('songAnime');
+const artImg        = document.getElementById('artImg');
+const artFallback   = document.getElementById('artFallback');
+const heroArt       = document.getElementById('heroArt');
+const heroBg        = document.getElementById('heroBg');
+const favoriteBtn   = document.getElementById('favoriteBtn');
+const favoriteIcon  = document.getElementById('favoriteIcon');
+const stationChip   = document.getElementById('stationChip');
+
+const pbArtImg      = document.getElementById('pbArtImg');
+const pbArtFallback = document.getElementById('pbArtFallback');
+const pbBadge       = document.getElementById('pbBadge');
+const pbTitle       = document.getElementById('pbTitle');
+const pbArtist      = document.getElementById('pbArtist');
+const pbFavBtn      = document.getElementById('pbFavBtn');
+const pbFavIcon     = document.getElementById('pbFavIcon');
+
+const progressFill  = document.getElementById('progressFill');
+const timeElapsed   = document.getElementById('timeElapsed');
+const timeDuration  = document.getElementById('timeDuration');
+
+const listenerCnt    = document.getElementById('listenerCount');
+const listenerCntMob = document.getElementById('listenerCountMob');
+const statListeners  = document.getElementById('statListeners');
+const statStation    = document.getElementById('statStation');
+const statDuration   = document.getElementById('statDuration');
+
+const historyList   = document.getElementById('historyList');
+const toast         = document.getElementById('toast');
+const toastIcon     = document.getElementById('toastIcon');
+const toastMsg      = document.getElementById('toastMsg');
+
+window.addEventListener('load', () => {
+  audio.volume = 0.8;
+  const params  = new URLSearchParams(location.search);
+  const stParam = params.get('station');
+  if (stParam && STATIONS[stParam]) station = stParam;
+  connectWS(station);
+  syncStationUI(station);
+});
+
+function connectWS(st) {
+  if (ws) { ws.onclose = null; ws.close(); }
+  clearInterval(wsHB);
+  ws = new WebSocket(STATIONS[st].ws);
+
+  ws.onopen = () => console.log('[WS] connected', st);
+  ws.onmessage = (e) => {
+    try {
+      const data = JSON.parse(e.data);
+      if (data.op === 0) {
+        const interval = data.d?.heartbeat || 45000;
+        wsHB = setInterval(() => {
+          if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify({ op: 9 }));
+        }, interval);
+        ws.send(JSON.stringify({ op: 2, d: { auth: '' } }));
+      }
+      if (data.op === 1) handleSong(data.d);
+    } catch (err) { console.error('[WS]', err); }
+  };
+  ws.onerror = (err) => console.error('[WS] error', err);
+  ws.onclose = () => { clearInterval(wsHB); setTimeout(() => connectWS(station), 5000); };
+}
+
+function handleSong(data) {
+  if (!data?.song) return;
+  const song      = data.song;
+  const listeners = data.listeners;
+  const start     = data.startTime;
+  const dur       = song.duration || 0;
+
+  if (currentSong && currentSong.id !== song.id) addToHistory(currentSong);
+  currentSong = song;
+
+  if (start) {
+    const d = new Date(start);
+    songStart = !isNaN(d.getTime()) ? Math.min(d.getTime(), Date.now() + 5000) : Date.now();
+  } else {
+    songStart = Date.now();
+  }
+
+  const title  = song.title || 'Unknown';
+  const artist = (song.artists || []).map(a => a.name).join(', ') || '—';
+  const anime  = song.albums?.[0]?.name || song.source || '';
+  const imgFile = song.albums?.[0]?.image || song.image || null;
+  const artUrl  = imgFile ? 'https://cdn.listen.moe/covers/' + imgFile : null;
+
+  songTitle.textContent  = title;
+  songArtist.textContent = artist;
+  songAnime.textContent  = anime;
+  pbTitle.textContent    = title;
+  pbArtist.textContent   = artist;
+  document.title         = title + ' — YUME RADIO';
+
+  if (listeners !== undefined) {
+    const fmt = listeners.toLocaleString();
+    listenerCnt.textContent    = fmt;
+    listenerCntMob.textContent = fmt;
+    statListeners.textContent  = fmt;
+  }
+  statDuration.textContent = dur > 0 ? fmtTime(dur) : '—';
+
+  loadArt(artUrl);
+  updateFavBtn(song);
+  startProgress(dur);
+  updateMediaSession(title, artist, artUrl);
+}
+
+function loadArt(url) {
+  if (!url) { showFallback(); return; }
+  const tmp = new Image();
+  tmp.onload = () => {
+    artImg.src = url;
+    artImg.style.display = 'block';
+    artFallback.style.display = 'none';
+    pbArtImg.src = url;
+    pbArtImg.style.display = 'block';
+    pbArtFallback.style.display = 'none';
+    heroBg.style.backgroundImage = `url(${url})`;
+    heroBg.style.filter = 'blur(30px) saturate(140%) brightness(.4)';
+  };
+  tmp.onerror = showFallback;
+  tmp.src = url;
+}
+
+function showFallback() {
+  artImg.style.display = 'none';
+  artFallback.style.display = 'flex';
+  pbArtImg.style.display = 'none';
+  pbArtFallback.style.display = 'flex';
+  heroBg.style.backgroundImage = '';
+  heroBg.style.filter = '';
+}
+
+function startProgress(dur) {
+  clearInterval(progressInt);
+  timeDuration.textContent = dur > 0 ? fmtTime(dur) : '—';
+  if (dur <= 0) { progressFill.style.width = '0%'; return; }
+
+  progressInt = setInterval(() => {
+    const elapsed = Math.max(0, (Date.now() - songStart) / 1000);
+    const pct = Math.min((elapsed / dur) * 100, 100);
+    progressFill.style.width = pct + '%';
+    timeElapsed.textContent = fmtTime(elapsed);
+  }, 1000);
+}
+
+function fmtTime(s) {
+  return Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+}
+
+function togglePlay() {
+  isPlaying ? stopStream() : startStream();
+}
+
+function startStream() {
+  audio.removeAttribute('crossorigin');
+  audio.pause();
+  audio.removeAttribute('src');
+  audio.load();
+  audio.src    = STATIONS[station].stream;
+  audio.volume = 0.8;
+
+  audio.play()
+    .then(onPlaySuccess)
+    .catch(() => {
+      setTimeout(() => {
+        audio.src = STATIONS[station].stream + '?r=' + Date.now();
+        audio.play().then(onPlaySuccess)
+          .catch(() => showToast('bi bi-exclamation-triangle', 'Click play to start'));
+      }, 500);
+    });
+}
+
+function onPlaySuccess() {
+  isPlaying = true;
+  playIcon.className = 'bi bi-pause-fill';
+  heroArt && heroArt.classList.add('playing');
+  pbBadge.style.display = 'flex';
+  showToast('bi bi-play-fill', 'Playing ' + STATIONS[station].name);
+  if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing';
+}
+
+function stopStream() {
+  audio.pause();
+  audio.removeAttribute('src');
+  audio.load();
+  isPlaying = false;
+  playIcon.className = 'bi bi-play-fill';
+  heroArt && heroArt.classList.remove('playing');
+  pbBadge.style.display = 'none';
+  showToast('bi bi-pause-fill', 'Paused');
+  if (navigator.mediaSession) navigator.mediaSession.playbackState = 'paused';
+}
+
+function switchStation(st) {
+  if (station === st) return;
+  station = st;
+  syncStationUI(st);
+  connectWS(st);
+  if (isPlaying) startStream();
+  showToast('bi bi-broadcast', 'Switched to ' + STATIONS[st].name);
+}
+
+function syncStationUI(st) {
+  document.getElementById('sideJpop').classList.toggle('active', st === 'jpop');
+  document.getElementById('sideKpop').classList.toggle('active', st === 'kpop');
+  document.getElementById('dotJpop').style.display = st === 'jpop' ? 'block' : 'none';
+  document.getElementById('dotKpop').style.display = st === 'kpop' ? 'block' : 'none';
+  stationChip.textContent    = STATIONS[st].name;
+  statStation.textContent    = STATIONS[st].name;
+}
+
+function toggleFavorite() {
+  if (!currentSong) return;
+  const id  = currentSong.id;
+  const idx = favorites.findIndex(f => f.id === id);
+  if (idx >= 0) {
+    favorites.splice(idx, 1);
+    showToast('bi bi-heartbreak', 'Removed from favorites');
+  } else {
+    favorites.push({
+      id,
+      title:  currentSong.title || 'Unknown',
+      artist: (currentSong.artists || []).map(a => a.name).join(', '),
+    });
+    showToast('bi bi-heart', 'Added to favorites');
+  }
+  localStorage.setItem('yr_favs', JSON.stringify(favorites));
+  updateFavBtn(currentSong);
+}
+
+function updateFavBtn(song) {
+  const isFav = favorites.some(f => f.id === song.id);
+  favoriteBtn.classList.toggle('active', isFav);
+  favoriteIcon.className = isFav ? 'bi bi-heart-fill' : 'bi bi-heart';
+  pbFavBtn.classList.toggle('active', isFav);
+  pbFavIcon.className = isFav ? 'bi bi-heart-fill' : 'bi bi-heart';
+}
+
+function addToHistory(song) {
+  if (!song) return;
+  const imgFile = song.albums?.[0]?.image || null;
+  historyArr.unshift({
+    id:     song.id,
+    title:  song.title || 'Unknown',
+    artist: (song.artists || []).map(a => a.name).join(', ') || '—',
+    img:    imgFile ? 'https://cdn.listen.moe/covers/' + imgFile : null,
+    time:   new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
+  });
+  if (historyArr.length > 30) historyArr.pop();
+  renderHistory();
+}
+
+function renderHistory() {
+  if (!historyArr.length) {
+    historyList.innerHTML = `
+      <div class="history-empty">
+        <i class="bi bi-music-note-list"></i>
+        <span>No tracks yet. Start listening!</span>
+      </div>`;
+    return;
+  }
+  historyList.innerHTML = historyArr.map((h, i) => `
+    <div class="history-item">
+      <span class="h-num">${i + 1}</span>
+      <div class="h-thumb">
+        ${h.img ? `<img src="${h.img}" alt="" loading="lazy" />` : `<i class="bi bi-music-note"></i>`}
+      </div>
+      <div class="h-info">
+        <div class="h-title">${esc(h.title)}</div>
+        <div class="h-artist">${esc(h.artist)}</div>
+      </div>
+      <div class="h-time">${h.time}</div>
+    </div>`).join('');
+}
+
+function clearHistory() {
+  historyArr = [];
+  renderHistory();
+  showToast('bi bi-trash3', 'History cleared');
+}
+
+function esc(str) {
+  const d = document.createElement('div');
+  d.appendChild(document.createTextNode(str));
+  return d.innerHTML;
+}
+
+function showView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.snav-item').forEach(i => i.classList.remove('active'));
+  const key = name.charAt(0).toUpperCase() + name.slice(1);
+  document.getElementById('view' + key).classList.add('active');
+  document.getElementById('nav'  + key).classList.add('active');
+  if (window.innerWidth <= 768) closeSidebar();
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const isOpen  = sidebar.classList.toggle('open');
+  overlay.classList.toggle('show', isOpen);
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('show');
+}
+
+function showToast(iconClass, msg) {
+  toastIcon.className  = iconClass;
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTmr);
+  toastTmr = setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+function updateMediaSession(title, artist, artUrl) {
+  if (!('mediaSession' in navigator)) return;
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title, artist,
+    album: 'YUME RADIO — ' + STATIONS[station].name,
+    artwork: artUrl
+      ? [{ src: artUrl, sizes: '300x300', type: 'image/jpeg' }]
+      : [{ src: '/img/icon.png', sizes: '512x512', type: 'image/png' }],
+  });
+  navigator.mediaSession.setActionHandler('play',         () => { if (!isPlaying) startStream(); });
+  navigator.mediaSession.setActionHandler('pause',        () => { if (isPlaying)  stopStream();  });
+  navigator.mediaSession.setActionHandler('stop',         () => { if (isPlaying)  stopStream();  });
+  navigator.mediaSession.setActionHandler('nexttrack',     () => switchStation(station === 'jpop' ? 'kpop' : 'jpop'));
+  navigator.mediaSession.setActionHandler('previoustrack', () => switchStation(station === 'jpop' ? 'kpop' : 'jpop'));
+}
+
+audio.addEventListener('error', () => { if (isPlaying) setTimeout(() => startStream(), 3000); });
+audio.addEventListener('ended', () => { if (isPlaying) startStream(); });
+  </script>
+
 </body>
+
 </html>
